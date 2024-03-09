@@ -18,5 +18,13 @@ app.get('/about-us', (req, res) => {
 })
 
 app.get('/contact', (req, res) => {
-    res.sendFile('./views/blog.html', {root: __dirname});
+    res.sendFile('./views/blog.html', {root: __dirname}); 
+})
+
+
+// redirects
+
+app.get('/about-me', (req, res) => {
+    res.redirect('/about-us');         // to work wit h redirects you ,ust declared the function like above when you write if user request about-us in to url tab and then respond with the file directory of html
+                                        // after that if your mistakenly go to the similiar but wrong name like about-me instead of about-us you can redirect it with this function besides this comment    
 })
