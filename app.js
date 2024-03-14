@@ -1,6 +1,8 @@
 const express = require('express');
 const { method } = require('lodash');
 const morgan = require('morgan');
+const mongoose = require('mongoose'); 
+const { error } = require('firebase-functions/logger');
 
 // express app
 const app = express();
@@ -9,6 +11,9 @@ const app = express();
 // connect to the mongodb database
 
 const dbURI = 'mongodb+srv://bhathiya:MasterPos1212@nodetuts.nhjrkox.mongodb.net/?retryWrites=true&w=majority&appName=nodetuts';
+mongoose.connect(dbURI)
+.then((result) => console.log('Connected to the db'))
+.catch((err) => console.log(err))
 
 // listen for requests
 app.listen(3000);
