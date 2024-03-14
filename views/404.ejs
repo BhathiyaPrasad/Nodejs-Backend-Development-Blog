@@ -1,24 +1,13 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>index</title>
-</head>
+<%- include("./partials/head.ejs") %>
+
 <body>
-    <nav>
-        <div class="site-title">
-          <a href="/">Blog Ninja</a>
-          <p>A Net Ninja Site</p>
-        </div>
-        <ul>
-            <li><a href="/">Blogs</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/blogs/create">new Blog</a></li>
-        </ul>
-    </nav>
-    <div class="Not Found content">
-       OOPS. Page Not Found
-    </div>
+  <%- include("./partials/nav.ejs") %>
+
+  <div class="not-found content">
+    OOPS, page not found :)
+  </div>
+
+  <%- include("./partials/footer.ejs") %>
 </body>
 </html>

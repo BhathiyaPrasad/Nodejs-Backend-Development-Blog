@@ -1,26 +1,16 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>index</title>
-</head>
+<%- include("./partials/head.ejs") %>
+
 <body>
-    <nav>
-        <div class="site-title">
-<a href="/">Blog Ninja</a>
-<p>A Net Ninja Site</p>
-        </div>
-        <ul>
-            <li><a href="/">Blogs</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/blogs/create">new Blog</a></li>
-        </ul>
-    </nav>
-    <div class="About content">
-     <p>This is The Things That I write fo testing BACkend Developing with Node.js</p>
-     <p>This is The Things That I write fo testing BACkend Developing with Node.js</p>
-     <p>This is The Things That I write fo testing BACkend Developing with Node.js</p>
-    </div>
+  <%- include("./partials/nav.ejs") %>
+
+  <div class="about content">
+    <h2>About Us</h2>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia quibusdam quaerat illo a modi tenetur ut blanditiis, illum quo consectetur recusandae excepturi natus impedit rem, tempora cum fuga quae in.</p>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia quibusdam quaerat illo a modi tenetur ut blanditiis, illum quo consectetur recusandae excepturi natus impedit rem, tempora cum fuga quae in.</p>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia quibusdam quaerat illo a modi tenetur ut blanditiis, illum quo consectetur recusandae excepturi natus impedit rem, tempora cum fuga quae in.</p>
+  </div>
+
+  <%- include("./partials/footer.ejs") %>
 </body>
 </html>
