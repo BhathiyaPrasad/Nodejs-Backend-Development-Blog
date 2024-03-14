@@ -1,5 +1,6 @@
 const express = require('express');
 const { method } = require('lodash');
+const morgan = require('morgan');
 
 // express app
 const app = express();
@@ -7,18 +8,12 @@ const app = express();
 // listen for requests
 app.listen(3000);
 
-app.use((req,res, next)=> {
-console.log('new request made:');
-console.log('host:', req.hostname);
-console.log('path:', req.path);
-console.log('method:', req.method);
-next();
-});
+//middleware static files
 
-app.use((req,res, next)=> {
-    console.log('The Next Middleware:');
-    next();
-    });
+app.use(express.static('public'));
+
+
+app.use(morgan('dev'));
     
 
 // register view engine
