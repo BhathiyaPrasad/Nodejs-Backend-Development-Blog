@@ -2,7 +2,7 @@ const express = require('express');
 const { method } = require('lodash');
 const morgan = require('morgan');
 const mongoose = require('mongoose'); 
-
+const Blog = require('./modals/blog');
 
 // express app
 const app = express();
@@ -21,10 +21,24 @@ mongoose.connect(dbURI)
 //middleware static files
 
 app.use(express.static('public'));
-
-
 app.use(morgan('dev'));
-    
+   
+// mongoose and mongo sandbox routes
+app.get('/add-blog', (req, res) => {
+  const blog = new Blog({
+  title: 'New Blog',
+  snippet: 'About My New V',
+  body: 'more About my new Blog'
+  
+});
+blog.save()
+.then((result) => {
+  res.send(result)
+})
+.catch((err) => {
+  console.log(err);
+});
+
 
 // register view engine
 app.set('view engine', 'ejs');
