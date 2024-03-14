@@ -12,11 +12,11 @@ const app = express();
 
 const dbURI = 'mongodb+srv://bhathiya:MasterPos1212@nodetuts.nhjrkox.mongodb.net/?retryWrites=true&w=majority&appName=nodetuts';
 mongoose.connect(dbURI)
-.then((result) => console.log('Connected to the db'))
+.then((result) => app.listen(3000))
 .catch((err) => console.log(err))
 
 // listen for requests
-app.listen(3000);
+
 
 //middleware static files
 
