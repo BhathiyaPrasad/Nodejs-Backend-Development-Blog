@@ -5,6 +5,11 @@ const morgan = require('morgan');
 // express app
 const app = express();
 
+
+// connect to the mongodb database
+
+const dbURI = 'mongodb+srv://bhathiya:MasterPos1212@nodetuts.nhjrkox.mongodb.net/?retryWrites=true&w=majority&appName=nodetuts';
+
 // listen for requests
 app.listen(3000);
 
