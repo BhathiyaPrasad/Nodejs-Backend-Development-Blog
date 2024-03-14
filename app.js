@@ -2,7 +2,7 @@ const express = require('express');
 const { method } = require('lodash');
 const morgan = require('morgan');
 const mongoose = require('mongoose'); 
-const { error } = require('firebase-functions/logger');
+
 
 // express app
 const app = express();
