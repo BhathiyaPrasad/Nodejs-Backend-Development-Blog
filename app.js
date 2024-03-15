@@ -2,7 +2,7 @@ const express = require('express');
 const { method } = require('lodash');
 const morgan = require('morgan');
 const mongoose = require('mongoose'); 
-const Blog = require('./modals/blog');
+const Blog = require('./models/blog');
 
 // express app
 const app = express();
@@ -10,7 +10,7 @@ const app = express();
 
 // connect to the mongodb database
 
-const dbURI = 'mongodb+srv://bhathiya:MasterPos1212@nodetuts.nhjrkox.mongodb.net/?retryWrites=true&w=majority&appName=nodetuts';
+const dbURI = 'mongodb+srv://bhathiya:MasterPos1212@nodetuts.nhjrkox.mongodb.net/node-tuts?retryWrites=true&w=majority&appName=nodetuts';
 mongoose.connect(dbURI)
 .then((result) => app.listen(3000))
 .catch((err) => console.log(err))
@@ -39,6 +39,18 @@ blog.save()
   console.log(err);
 });
 })
+
+app.get('/all-blog',(req,res) => {
+  Blog.find()
+  .then((result) => {
+    res.send(result);
+
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+})
+
 
 // register view engine
 app.set('view engine', 'ejs');
