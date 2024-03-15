@@ -38,7 +38,7 @@ blog.save()
 .catch((err) => {
   console.log(err);
 });
-
+})
 
 // register view engine
 app.set('view engine', 'ejs');
