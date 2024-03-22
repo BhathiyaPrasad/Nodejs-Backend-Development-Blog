@@ -1,5 +1,5 @@
 const express = require('express');
-const { method } = require('lodash');
+const { method, result } = require('lodash');
 const morgan = require('morgan');
 const mongoose = require('mongoose'); 
 const Blog = require('./models/blog');
@@ -39,7 +39,7 @@ blog.save()
   console.log(err);
 })
 });
-})
+
 
 app.get('/all-blog',(req,res) => {
   Blog.find()
@@ -50,6 +50,12 @@ app.get('/all-blog',(req,res) => {
   .catch((err) => {
     console.log(err);
   });
+})
+app.get('/single-blog',(req, res) => {
+  Blog.findById('65f3db4928d7dee04cf4c972')
+  .then((result) => {
+    res.send(result)
+  })
 })
 
  
