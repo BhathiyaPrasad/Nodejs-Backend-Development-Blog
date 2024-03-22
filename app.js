@@ -65,7 +65,7 @@ app.get('/single-blog',(req, res) => {
 app.set('view engine', 'ejs');
 // app.set('views', 'myviews');
 
-app.get('/blogs', (req, res) => {
+app.get('/', (req, res) => {
   const blogs = [
     {title: 'Yoshi finds eggs', snippet: 'Lorem ipsum dolor sit amet consectetur'},
     {title: 'Mario finds stars', snippet: 'Lorem ipsum dolor sit amet consectetur'},
@@ -79,9 +79,11 @@ app.get('/about', (req, res) => {
 });
 
 app.post('/blogs',(req, res) => {
+  console.log(req.body)
   const blog = new Blog(req.body);
   blog.save()
    .then((result) => {
+   
      res.redirect('/blogs');
    })
   .catch((err) =>{
