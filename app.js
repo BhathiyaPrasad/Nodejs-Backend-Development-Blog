@@ -21,6 +21,7 @@ mongoose.connect(dbURI)
 //middleware static files
 
 app.use(express.static('public'));
+app.use(express.urlencoded({extended: true}));
 app.use(morgan('dev'));
    
 // mongoose and mongo sandbox routes
@@ -64,7 +65,7 @@ app.get('/single-blog',(req, res) => {
 app.set('view engine', 'ejs');
 // app.set('views', 'myviews');
 
-app.get('/', (req, res) => {
+app.get('/blogs', (req, res) => {
   const blogs = [
     {title: 'Yoshi finds eggs', snippet: 'Lorem ipsum dolor sit amet consectetur'},
     {title: 'Mario finds stars', snippet: 'Lorem ipsum dolor sit amet consectetur'},
@@ -77,9 +78,22 @@ app.get('/about', (req, res) => {
   res.render('about', { title: 'About' });
 });
 
+app.post('/blogs',(req, res) => {
+  const blog = new Blog(req.body);
+  blog.save()
+   .then((result) => {
+     res.redirect('/blogs');
+   })
+  .catch((err) =>{
+   console.log(err);
+  })
+ })
+
+
 app.get('/blogs/create', (req, res) => {
   res.render('create', { title: 'Create a new blog' });
 });
+
 
 // 404 page
 app.use((req, res) => {
