@@ -19,6 +19,12 @@
                                            4  mongoose
                                            5  morgan
                                            6  nodemon
+
+#### Setup Project in Your Local Machine
+
+                         git clone 
+
+                                           
 #### Run Locally with Nodemon 
 
                         >  npm install nodemon
