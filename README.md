@@ -22,9 +22,12 @@
 
 #### Setup Project in Your Local Machine
 
-                         git clone 
+                         git clone https://github.com/BhathiyaPrasad/Backend-Development-Blog.git
 
-                                           
+#### Install assential FrameWorks and Libraries 
+                          
+                         npm install
+
 #### Run Locally with Nodemon 
 
                         >  npm install nodemon
