@@ -8,8 +8,8 @@
                                            2. CSS
                                            3. Javascript, EJS
                               2 BackEnd
-                                          1. Node js
-                                          2. Express
-                                          2. Javascript
+                                           1. Node js
+                                           2. Express
+                                           2. Javascript
                                           
                                       
