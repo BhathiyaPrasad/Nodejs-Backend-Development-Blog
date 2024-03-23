@@ -33,5 +33,5 @@
 
 #### Run Locally with Nodemon 
 
-                        >  npm install nodemon
+                      
                         >  nodemon app
