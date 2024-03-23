@@ -33,5 +33,4 @@
 
 #### Run Locally with Nodemon 
 
-                      
-                        >  nodemon app
+                         nodemon app
