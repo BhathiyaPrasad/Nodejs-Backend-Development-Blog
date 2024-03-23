@@ -19,3 +19,7 @@
                                            4  mongoose
                                            5  morgan
                                            6  nodemon
+#### Run Locally with Nodemon 
+
+                        >  npm install nodemon
+                        >  nodemon app
