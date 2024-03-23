@@ -3,6 +3,9 @@ const { method, result } = require('lodash');
 const morgan = require('morgan');
 const mongoose = require('mongoose'); 
 const Blog = require('./models/blog');
+const { render } = require('ejs');
+const { request } = require('http');
+const { redirect } = require('server/reply');
 
 // express app
 const app = express();
@@ -77,6 +80,7 @@ app.get('/about', (req, res) => {
 });
 
 // blog routes
+
 app.get('/blogs/create', (req, res) => {
   res.render('create', { title: 'Create a new blog' });
 });
@@ -102,6 +106,32 @@ app.post('/blogs', (req, res) =>{
      console.log(err);
   })
 })
+app.get('/blogs/:id', (req, res) => {
+  const id = req.params.id
+ 
+  Blog.findById(id)
+  .then(result => {
+    res.render('details', { blog:result, title:'Blog Details'});
+  })
+  .catch(err => {
+    console.log(err);
+  });
+})
+
+// This will find the id in database and delete the record
+
+app.delete('/blogs/:id',(req, res) => {
+  const id = request.params.id;
+  Blog.findByIdAndDelete(id)
+  .then(result => {
+     res.json({redirect: '/blogs'})
+  })
+  .catch(err => {
+    console.log(err)
+  })
+})
+
+
 
 // 404 page
 app.use((req, res) => {
