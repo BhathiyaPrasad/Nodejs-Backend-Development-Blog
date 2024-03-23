@@ -6,10 +6,16 @@
 
                                            1. HTML
                                            2. CSS
-                                           3. Javascript, EJS
+                                           3. Javascript
                               2 BackEnd
                                            1. Node js
                                            2. Express
                                            2. Javascript
                                           
-                                      
+                              3 Tools & Packages        
+                                           1  ejs
+                                           2  express
+                                           3  lodash
+                                           4  mongoose
+                                           5  morgan
+                                           6  nodemon
