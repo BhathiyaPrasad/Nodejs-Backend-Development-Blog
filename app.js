@@ -5,7 +5,6 @@ const mongoose = require('mongoose');
 const Blog = require('./models/blog');
 const { render } = require('ejs');
 const { request } = require('http');
-const { redirect } = require('server/reply');
 
 // express app
 const app = express();
